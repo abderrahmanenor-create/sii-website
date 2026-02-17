@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import logo from "./logo-sii-transparent.png";
+import logoGear from "./logo-engrenage-rotating.png";
 
 /* ─────────────────────────────────────────
    PALETTE — bleu ciel clair + marine logo
@@ -179,46 +179,23 @@ const G = `
 `;
 
 /* ─────────────────────────────────────────
-   ENGRENAGE SEUL — transparent, tourne
+   LOGO ANIMÉ — Image PNG qui tourne
 ───────────────────────────────────────── */
-function GearLogo({ size = 48, color = C.navy, speed = 16 }) {
-  const cx = size / 2, cy = size / 2;
-  const Ro = size * 0.42;
-  const Ri = size * 0.28;
-  const Rh = size * 0.11;
-
-  const N = 8;
-  const pts = [];
-  for (let i = 0; i < N; i++) {
-    const base = (i / N) * Math.PI * 2;
-    const w = (0.4 / N) * Math.PI * 2;
-    pts.push([cx + Math.cos(base - w) * Ri, cy + Math.sin(base - w) * Ri]);
-    pts.push([cx + Math.cos(base - w * 0.6) * Ro, cy + Math.sin(base - w * 0.6) * Ro]);
-    pts.push([cx + Math.cos(base + w * 0.6) * Ro, cy + Math.sin(base + w * 0.6) * Ro]);
-    pts.push([cx + Math.cos(base + w) * Ri, cy + Math.sin(base + w) * Ri]);
-  }
-  const pathD = pts.map((p, i) => `${i === 0 ? "M" : "L"}${p[0].toFixed(2)},${p[1].toFixed(2)}`).join(" ") + " Z";
-
-  const spokes = Array.from({ length: 6 }, (_, i) => {
-    const a = (i / 6) * Math.PI * 2;
-    return {
-      x1: cx + Math.cos(a) * (Rh * 1.5), y1: cy + Math.sin(a) * (Rh * 1.5),
-      x2: cx + Math.cos(a) * (Ri * 0.78), y2: cy + Math.sin(a) * (Ri * 0.78),
-    };
-  });
-
+function AnimatedLogo({ size = 50, speed = 12 }) {
   return (
-    <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} fill="none" style={{ display:"block", flexShrink:0 }}>
-      <g className="gear-spin" style={{ transformOrigin:`${cx}px ${cy}px`, animationDuration:`${speed}s` }}>
-        <path d={pathD} fill={color} opacity=".9" />
-        <circle cx={cx} cy={cy} r={Ri * 0.88} fill="transparent" stroke={color} strokeWidth={size * 0.025} opacity=".3" />
-        {spokes.map((s, i) => (
-          <line key={i} x1={s.x1} y1={s.y1} x2={s.x2} y2={s.y2} stroke={color} strokeWidth={size * 0.03} opacity=".45" strokeLinecap="round" />
-        ))}
-        <circle cx={cx} cy={cy} r={Rh} fill="transparent" stroke={color} strokeWidth={size * 0.03} opacity=".65" />
-        <circle cx={cx} cy={cy} r={Rh * 0.45} fill={color} opacity=".55" />
-      </g>
-    </svg>
+    <div style={{ width:size, height:size, display:"flex", alignItems:"center", justifyContent:"center" }}>
+      <img
+        src={logoGear}
+        alt="SII Logo"
+        style={{
+          width:size,
+          height:size,
+          objectFit:"contain",
+          animation:`gearSpin ${speed}s linear infinite`,
+          transformOrigin:"center center",
+        }}
+      />
+    </div>
   );
 }
 
@@ -407,10 +384,13 @@ function Nav() {
       borderBottom: scrolled ? `1px solid ${C.rule}` : "none",
       transition:"background .5s, border-color .5s",
     }}>
-      {/* Logo PNG transparent */}
-      <a href="#accueil" style={{ display:"flex", alignItems:"center", textDecoration:"none" }}>
-        <img src={logo} alt="SII — Société d'Ingénierie et d'Innovation"
-          style={{ height:52, width:"auto" }} />
+      {/* Logo animé + texte */}
+      <a href="#accueil" style={{ display:"flex", alignItems:"center", gap:14, textDecoration:"none" }}>
+        <AnimatedLogo size={32} color={C.navy} speed={14} />
+        <div>
+          <div className="f-mono" style={{ fontSize:".76rem", letterSpacing:".28em", textTransform:"uppercase", color:C.navy, lineHeight:1 }}>SII</div>
+          <div className="f-mono" style={{ fontSize:".55rem", letterSpacing:".07em", color:C.textL, marginTop:2 }}>Société d'Ingénierie et d'Innovation</div>
+        </div>
       </a>
 
       <ul className="nav-links-desk" style={{ display:"flex", gap:"2.2rem", listStyle:"none", alignItems:"center" }}>
@@ -469,10 +449,9 @@ function Hero() {
           EIA · Électricité · Instrumentation · Automatisme
         </div>
 
-        {/* Logo PNG transparent — grand format */}
+        {/* Logo animé — grand format */}
         <div style={{ marginBottom:"2.5rem", animation:"fadeUp .9s cubic-bezier(.16,1,.3,1) .45s both" }}>
-          <img src={logo} alt="SII"
-            style={{ height:72, width:"auto" }} />
+          <AnimatedLogo size={56} color={C.navy} speed={12} />
         </div>
 
         {/* Titre */}
@@ -546,7 +525,7 @@ function About() {
   return (
     <section id="apropos" style={{ background:C.white, position:"relative" }}>
       <div style={{ position:"absolute", right:"-4rem", top:"4rem", opacity:.04, pointerEvents:"none" }}>
-        <GearLogo size={400} color={C.navy} speed={60} />
+        <AnimatedLogo size={300} color={C.navy} speed={60} />
       </div>
       <ElectricCables flip />
       <div style={{ padding:"9rem 5vw", maxWidth:1500, margin:"0 auto", position:"relative", zIndex:1 }}>
@@ -560,7 +539,7 @@ function About() {
               <span style={{ color:C.steel }}>DÉDIÉE</span>
             </h2>
             <div style={{ marginTop:"3rem", opacity:.15 }}>
-              <GearLogo size={100} color={C.navy} speed={18} />
+              <AnimatedLogo size={80} color={C.navy} speed={18} />
             </div>
           </div>
           <div>
@@ -613,7 +592,7 @@ function Services() {
   return (
     <section id="services" style={{ background:C.sky, position:"relative", overflow:"hidden" }}>
       <div style={{ position:"absolute", left:"-3rem", bottom:"-3rem", opacity:.04, pointerEvents:"none" }}>
-        <GearLogo size={340} color={C.navy} speed={55} />
+        <AnimatedLogo size={260} color={C.navy} speed={55} />
       </div>
       <ElectricCables flip />
       <div style={{ padding:"9rem 5vw", maxWidth:1500, margin:"0 auto", position:"relative", zIndex:1 }}>
@@ -817,7 +796,7 @@ function Contact() {
               Que vous soyez en phase d'étude, en cours d'appel d'offres ou en recherche d'un partenaire technique, l'équipe SII est disponible pour analyser votre besoin et vous proposer une réponse adaptée.
             </p>
             <div style={{ marginTop:"3rem", opacity:.12 }}>
-              <GearLogo size={80} color={C.navy} speed={20} />
+              <AnimatedLogo size={64} color={C.navy} speed={20} />
             </div>
           </div>
           <div className="reveal">
@@ -856,9 +835,12 @@ function Footer() {
       display:"flex", justifyContent:"space-between", alignItems:"center", flexWrap:"wrap", gap:"1rem",
     }}>
       <div style={{ display:"flex", alignItems:"center", gap:14 }}>
-        {/* Logo PNG transparent sur fond marine */}
-        <img src={logo} alt="SII"
-          style={{ height:38, width:"auto", filter:"brightness(0) invert(1)", opacity:.75 }} />
+        {/* Logo animé blanc sur fond marine */}
+        <AnimatedLogo size={30} color={C.white} speed={16} />
+        <div>
+          <div className="f-mono" style={{ fontSize:".7rem", letterSpacing:".26em", textTransform:"uppercase", color:"rgba(255,255,255,.75)" }}>SII</div>
+          <div className="f-mono" style={{ fontSize:".54rem", color:"rgba(255,255,255,.4)" }}>Société d'Ingénierie et d'Innovation</div>
+        </div>
       </div>
       <span style={{ fontStyle:"italic", fontSize:".88rem", color:"rgba(255,255,255,.38)", fontFamily:"'Barlow'" }}>
         Construisons l'avenir, projet par projet.
