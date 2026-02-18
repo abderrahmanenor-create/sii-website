@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import logoGear from "./logoengrenagerotating.png";
+import logoGear from "./logo-engrenage-rotating.png";
 
 /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    PALETTE –bleu ciel clair + marine logo
