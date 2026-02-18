@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
 import logoGear from "./logo-engrenage-rotating.png";
 
-/* ─────────────────────────────────────────
-   PALETTE — bleu ciel clair + marine logo
-───────────────────────────────────────── */
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+   PALETTE â€” bleu ciel clair + marine logo
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const C = {
-  // Fonds clairs — bleu ciel industriel
+  // Fonds clairs â€” bleu ciel industriel
   sky:       "#EEF3F8",   // fond principal
-  skyL:      "#F5F8FC",   // fond très clair
+  skyL:      "#F5F8FC",   // fond trÃ¨s clair
   skyM:      "#DDE8F2",   // bleu ciel moyen
-  skyD:      "#C8D9EC",   // bleu ciel foncé
+  skyD:      "#C8D9EC",   // bleu ciel foncÃ©
 
   // Marine (du logo #28283C)
   navy:      "#28283C",
@@ -25,20 +25,20 @@ const C = {
   // Textes
   text:      "#1E1E2E",   // texte principal
   textM:     "#3C3C50",   // texte secondaire
-  textL:     "rgba(40,40,60,.55)", // texte léger
+  textL:     "rgba(40,40,60,.55)", // texte lÃ©ger
 
   // Accent
   bronze:    "#B8966A",
   bronzeL:   "#D4B48A",
 
-  // Règles
+  // RÃ¨gles
   rule:      "rgba(40,40,60,.1)",
   ruleB:     "rgba(184,150,106,.3)",
 };
 
-/* ─────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    CSS GLOBAL
-───────────────────────────────────────── */
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const G = `
   @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap');
 
@@ -60,7 +60,7 @@ const G = `
   .f-display { font-family: 'Bebas Neue', sans-serif; letter-spacing: .04em; }
   .f-mono    { font-family: 'DM Mono', monospace; }
 
-  /* ── Animations ── */
+  /* â”€â”€ Animations â”€â”€ */
   @keyframes gearSpin   { to { transform: rotate(360deg); } }
   @keyframes fadeUp     { from { opacity:0; transform:translateY(32px); } to { opacity:1; transform:translateY(0); } }
   @keyframes blink      { 0%,100%{opacity:1} 50%{opacity:.15} }
@@ -178,9 +178,9 @@ const G = `
   }
 `;
 
-/* ─────────────────────────────────────────
-   LOGO ANIMÉ — Image PNG qui tourne
-───────────────────────────────────────── */
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+   LOGO ANIMÃ‰ â€” Image PNG qui tourne
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 function AnimatedLogo({ size = 50, speed = 12 }) {
   return (
     <div style={{ width:size, height:size, display:"flex", alignItems:"center", justifyContent:"center" }}>
@@ -199,9 +199,9 @@ function AnimatedLogo({ size = 50, speed = 12 }) {
   );
 }
 
-/* ─────────────────────────────────────────
-   CÂBLES ÉLECTRIQUES (séparateurs sections)
-───────────────────────────────────────── */
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+   CÃ‚BLES Ã‰LECTRIQUES (sÃ©parateurs sections)
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 function ElectricCables({ flip = false, dark = false }) {
   const col = dark ? C.white : C.navy;
   const colA = C.bronze;
@@ -232,15 +232,15 @@ function ElectricCables({ flip = false, dark = false }) {
   );
 }
 
-/* ─────────────────────────────────────────
-   GRUE + PYLÔNES (hero background)
-───────────────────────────────────────── */
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+   GRUE + PYLÃ”NES (hero background)
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 function CraneScene() {
   return (
     <svg viewBox="0 0 1100 620" preserveAspectRatio="xMidYMid slice"
       style={{ position:"absolute", inset:0, width:"100%", height:"100%", pointerEvents:"none", opacity:.12 }}>
 
-      {/* Nuages stylisés */}
+      {/* Nuages stylisÃ©s */}
       <g style={{ animation:"cloudDrift 25s linear infinite alternate" }}>
         <ellipse cx="200" cy="80" rx="80" ry="28" fill={C.steelL} opacity=".4" />
         <ellipse cx="260" cy="68" rx="55" ry="22" fill={C.steelL} opacity=".3" />
@@ -267,7 +267,7 @@ function CraneScene() {
         <line x1="510" y1="82" x2="720" y2="50" stroke={C.navy} strokeWidth="2" opacity=".45"/>
         <line x1="510" y1="82" x2="788" y2="82" stroke={C.navy} strokeWidth="1.5" opacity=".35"/>
         <rect x="762" y="80" width="40" height="22" fill={C.navy} rx="2" opacity=".6"/>
-        {/* Nacelle animée */}
+        {/* Nacelle animÃ©e */}
         <g style={{ animation:"nacelleUp 10s ease-in-out infinite" }}>
           <line x1="700" y1="94" x2="700" y2="260" stroke={C.navy} strokeWidth="2" strokeDasharray="5,5" opacity=".6"/>
           <rect x="678" y="260" width="44" height="22" fill={C.navy} rx="3" opacity=".75"/>
@@ -280,7 +280,7 @@ function CraneScene() {
         </g>
       </g>
 
-      {/* Pylônes */}
+      {/* PylÃ´nes */}
       {[60, 960].map(x=>(
         <g key={x}>
           <line x1={x+12} y1="300" x2={x+12} y2="600" stroke={C.navy} strokeWidth="4" opacity=".5"/>
@@ -292,7 +292,7 @@ function CraneScene() {
         </g>
       ))}
 
-      {/* Câbles entre pylônes */}
+      {/* CÃ¢bles entre pylÃ´nes */}
       {[315, 338, 360].map((y,i)=>(
         <path key={i}
           d={`M72 ${y} Q550 ${y+22} 972 ${y}`}
@@ -304,7 +304,7 @@ function CraneScene() {
         />
       ))}
 
-      {/* Éclairs */}
+      {/* Ã‰clairs */}
       <g style={{ animation:"spark 8s ease-in-out infinite" }}>
         <polyline points="72,330 81,346 70,350 83,370" fill="none" stroke="rgba(255,200,30,.8)" strokeWidth="3" strokeLinejoin="round"/>
       </g>
@@ -318,9 +318,9 @@ function CraneScene() {
   );
 }
 
-/* ─────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    PROGRESS BAR
-───────────────────────────────────────── */
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 function ProgressBar() {
   const [w, setW] = useState(0);
   useEffect(() => {
@@ -334,9 +334,9 @@ function ProgressBar() {
   return <div style={{ position:"fixed", top:0, left:0, zIndex:9999, height:"2px", width:`${w}%`, background:`linear-gradient(90deg,${C.navy},${C.bronze})`, transition:"width .08s linear", pointerEvents:"none" }} />;
 }
 
-/* ─────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    HOOK REVEAL
-───────────────────────────────────────── */
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 function useReveal() {
   useEffect(() => {
     const io = new IntersectionObserver(
@@ -348,9 +348,9 @@ function useReveal() {
   });
 }
 
-/* ─────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    EYEBROW
-───────────────────────────────────────── */
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 function Eyebrow({ text, light = false }) {
   return (
     <div className="reveal f-mono" style={{
@@ -364,9 +364,9 @@ function Eyebrow({ text, light = false }) {
   );
 }
 
-/* ─────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    NAV
-───────────────────────────────────────── */
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 function Nav() {
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
@@ -384,17 +384,17 @@ function Nav() {
       borderBottom: scrolled ? `1px solid ${C.rule}` : "none",
       transition:"background .5s, border-color .5s",
     }}>
-      {/* Logo animé + texte */}
+      {/* Logo animÃ© + texte */}
       <a href="#accueil" style={{ display:"flex", alignItems:"center", gap:14, textDecoration:"none" }}>
         <AnimatedLogo size={32} color={C.navy} speed={14} />
         <div>
           <div className="f-mono" style={{ fontSize:".76rem", letterSpacing:".28em", textTransform:"uppercase", color:C.navy, lineHeight:1 }}>SII</div>
-          <div className="f-mono" style={{ fontSize:".55rem", letterSpacing:".07em", color:C.textL, marginTop:2 }}>Société d'Ingénierie et d'Innovation</div>
+          <div className="f-mono" style={{ fontSize:".55rem", letterSpacing:".07em", color:C.textL, marginTop:2 }}>SociÃ©tÃ© d'IngÃ©nierie et d'Innovation</div>
         </div>
       </a>
 
       <ul className="nav-links-desk" style={{ display:"flex", gap:"2.2rem", listStyle:"none", alignItems:"center" }}>
-        {[["À Propos","#apropos"],["Services","#services"],["Missions","#missions"],["Références","#projets"]].map(([l,h])=>(
+        {[["Ã€ Propos","#apropos"],["Services","#services"],["Missions","#missions"],["RÃ©fÃ©rences","#projets"],["Ã‰quipe","#equipe"],["2026","#chiffres"]].map(([l,h])=>(
           <li key={h}><a href={h} className="nav-a">{l}</a></li>
         ))}
         <li>
@@ -405,9 +405,9 @@ function Nav() {
   );
 }
 
-/* ─────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    HERO
-───────────────────────────────────────── */
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 function Hero() {
   return (
     <section id="accueil" style={{
@@ -423,12 +423,12 @@ function Hero() {
       {/* Grue SVG */}
       <CraneScene />
 
-      {/* Dégradé pour lisibilité texte */}
+      {/* DÃ©gradÃ© pour lisibilitÃ© texte */}
       <div style={{ position:"absolute", inset:0,
         background:`linear-gradient(to right, ${C.skyL}F5 38%, ${C.sky}CC 65%, transparent 100%)`,
         zIndex:2 }} />
 
-      {/* Câbles haut et bas */}
+      {/* CÃ¢bles haut et bas */}
       <ElectricCables flip />
       <ElectricCables />
 
@@ -446,10 +446,10 @@ function Hero() {
           boxShadow:"0 2px 12px rgba(40,40,60,.06)",
         }}>
           <span style={{ width:5, height:5, borderRadius:"50%", background:C.bronze, animation:"blink 2.5s ease infinite" }} />
-          EIA · Électricité · Instrumentation · Automatisme
+          EIA Â· Ã‰lectricitÃ© Â· Instrumentation Â· Automatisme
         </div>
 
-        {/* Logo animé — grand format */}
+        {/* Logo animÃ© â€” grand format */}
         <div style={{ marginBottom:"2.5rem", animation:"fadeUp .9s cubic-bezier(.16,1,.3,1) .45s both" }}>
           <AnimatedLogo size={56} color={C.navy} speed={12} />
         </div>
@@ -460,7 +460,7 @@ function Hero() {
           lineHeight:.9, color:C.navy, marginBottom:0,
           animation:"fadeUp 1s cubic-bezier(.16,1,.3,1) .6s both",
         }}>
-          L'INGÉNIERIE<br/>
+          L'INGÃ‰NIERIE<br/>
           <span style={{ color:C.bronze }}>INDUSTRIELLE</span><br/>
           <span style={{ color:C.steel }}>AU SERVICE</span><br/>
           DU TERRAIN
@@ -484,13 +484,13 @@ function Hero() {
           color:C.textL, maxWidth:500,
           animation:"fadeUp .8s cubic-bezier(.16,1,.3,1) 1s both",
         }}>
-          SII accompagne les industriels marocains dans leurs projets complexes — de l'étude à la mise en service — avec la rigueur et la précision que chaque installation mérite.
+          SII accompagne les industriels marocains dans leurs projets complexes â€” de l'Ã©tude Ã  la mise en service â€” avec la rigueur et la prÃ©cision que chaque installation mÃ©rite.
         </p>
 
         {/* CTAs */}
         <div style={{ display:"flex", gap:"1rem", flexWrap:"wrap", marginTop:"2.5rem", animation:"fadeUp .8s cubic-bezier(.16,1,.3,1) 1.15s both" }}>
           <a href="#contact" className="btn-primary">Discuter de votre projet</a>
-          <a href="#services" className="btn-outline">Nos services →</a>
+          <a href="#services" className="btn-outline">Nos services â†’</a>
         </div>
 
         {/* KPIs */}
@@ -500,7 +500,7 @@ function Hero() {
           background:C.white, boxShadow:"0 2px 24px rgba(40,40,60,.06)",
           animation:"fadeUp .8s cubic-bezier(.16,1,.3,1) 1.3s both",
         }}>
-          {[["20+","Ans d'exp."],["550+","MMAD"],["5","Références"],["2024","Fondation"]].map(([v,l],i)=>(
+          {[["20+","Ans d'exp."],["550+","MMAD"],["5","RÃ©fÃ©rences"],["2024","Fondation"]].map(([v,l],i)=>(
             <div key={i} style={{ padding:"1.4rem 1rem", borderRight:i<3?`1px solid ${C.rule}`:"none" }}>
               <div className="f-display" style={{ fontSize:"2.8rem", lineHeight:1, color:C.navy }}>{v}</div>
               <div className="f-mono" style={{ fontSize:".58rem", letterSpacing:".16em", textTransform:"uppercase", color:C.textL, marginTop:".3rem", lineHeight:1.4 }}>{l}</div>
@@ -512,15 +512,15 @@ function Hero() {
   );
 }
 
-/* ─────────────────────────────────────────
-   À PROPOS
-───────────────────────────────────────── */
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+   Ã€ PROPOS
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 function About() {
   const pillars = [
-    { icon:"⚙", name:"Maîtrise EIA", body:"Électricité industrielle, instrumentation et automatisme — couverture complète des disciplines." },
-    { icon:"◈", name:"Méthodes Éprouvées", body:"Processus alignés sur les standards internationaux de gestion de projets industriels." },
-    { icon:"◎", name:"Ancrage Local", body:"Connaissance approfondie du tissu industriel marocain et de ses acteurs clés." },
-    { icon:"◇", name:"Engagement Direct", body:"Interlocuteurs techniques impliqués à chaque étape, sans intermédiaires." },
+    { icon:"âš™", name:"MaÃ®trise EIA", body:"Ã‰lectricitÃ© industrielle, instrumentation et automatisme â€” couverture complÃ¨te des disciplines." },
+    { icon:"â—ˆ", name:"MÃ©thodes Ã‰prouvÃ©es", body:"Processus alignÃ©s sur les standards internationaux de gestion de projets industriels." },
+    { icon:"â—Ž", name:"Ancrage Local", body:"Connaissance approfondie du tissu industriel marocain et de ses acteurs clÃ©s." },
+    { icon:"â—‡", name:"Engagement Direct", body:"Interlocuteurs techniques impliquÃ©s Ã  chaque Ã©tape, sans intermÃ©diaires." },
   ];
   return (
     <section id="apropos" style={{ background:C.white, position:"relative" }}>
@@ -531,12 +531,12 @@ function About() {
       <div style={{ padding:"9rem 5vw", maxWidth:1500, margin:"0 auto", position:"relative", zIndex:1 }}>
         <div className="about-grid" style={{ display:"grid", gridTemplateColumns:"4fr 6fr", gap:"7rem", alignItems:"start" }}>
           <div className="about-sticky" style={{ position:"sticky", top:100 }}>
-            <Eyebrow text="À Propos de SII" />
+            <Eyebrow text="Ã€ Propos de SII" />
             <h2 className="f-display reveal" style={{ fontSize:"clamp(3rem,4.5vw,5.5rem)", lineHeight:.92, color:C.navy, marginTop:"1.5rem" }}>
-              UNE ÉQUIPE<br/>
-              <span style={{ color:C.bronze }}>CHEVRONNÉE</span><br/>
+              UNE Ã‰QUIPE<br/>
+              <span style={{ color:C.bronze }}>CHEVRONNÃ‰E</span><br/>
               UNE STRUCTURE<br/>
-              <span style={{ color:C.steel }}>DÉDIÉE</span>
+              <span style={{ color:C.steel }}>DÃ‰DIÃ‰E</span>
             </h2>
             <div style={{ marginTop:"3rem", opacity:.15 }}>
               <AnimatedLogo size={80} color={C.navy} speed={18} />
@@ -545,19 +545,19 @@ function About() {
           <div>
             <div className="reveal" style={{ marginBottom:"2.5rem" }}>
               <div className="media-slot" style={{ aspectRatio:"16/7", padding:"3rem" }}>
-                <span style={{ fontSize:"1.5rem", opacity:.25 }}>📷</span>
-                <span className="f-mono" style={{ fontSize:".58rem", letterSpacing:".2em", textTransform:"uppercase", color:C.textL }}>Photo de l'équipe SII</span>
+                <span style={{ fontSize:"1.5rem", opacity:.25 }}>ðŸ“·</span>
+                <span className="f-mono" style={{ fontSize:".58rem", letterSpacing:".2em", textTransform:"uppercase", color:C.textL }}>Photo de l'Ã©quipe SII</span>
               </div>
             </div>
             <p className="reveal" style={{ fontSize:"1rem", lineHeight:1.9, color:C.textM, marginBottom:"1.8rem" }}>
-              <strong style={{ color:C.navy, fontWeight:500 }}>SII — Société d'Ingénierie et d'Innovation</strong> — est une entreprise marocaine créée en 2024, spécialisée dans l'électricité industrielle, l'instrumentation et l'automatisme. Si la structure est récente, l'expertise qui la fonde est profondément ancrée dans le terrain.
+              <strong style={{ color:C.navy, fontWeight:500 }}>SII â€” SociÃ©tÃ© d'IngÃ©nierie et d'Innovation</strong> â€” est une entreprise marocaine crÃ©Ã©e en 2024, spÃ©cialisÃ©e dans l'Ã©lectricitÃ© industrielle, l'instrumentation et l'automatisme. Si la structure est rÃ©cente, l'expertise qui la fonde est profondÃ©ment ancrÃ©e dans le terrain.
             </p>
             <p className="reveal" style={{ fontSize:"1rem", lineHeight:1.9, color:C.textM, marginBottom:"1.8rem" }}>
-              Ses fondateurs cumulent plus de vingt ans d'expérience opérationnelle sur des projets industriels d'envergure au Maroc, bâtie dans des environnements exigeants, auprès de grands donneurs d'ordres.
+              Ses fondateurs cumulent plus de vingt ans d'expÃ©rience opÃ©rationnelle sur des projets industriels d'envergure au Maroc, bÃ¢tie dans des environnements exigeants, auprÃ¨s de grands donneurs d'ordres.
             </p>
             <div className="reveal" style={{ borderLeft:`3px solid ${C.bronze}`, paddingLeft:"1.4rem", background:`${C.bronze}08`, padding:"1.5rem 2rem 1.5rem 1.8rem", margin:"2rem 0" }}>
               <p style={{ fontSize:".95rem", lineHeight:1.8, color:C.textM, margin:0 }}>
-                <strong style={{ color:C.navy, fontWeight:500 }}>Pourquoi SII ?</strong> Une équipe technique directement impliquée, de la première étude jusqu'à la mise en service — sans dilution dans une grande structure.
+                <strong style={{ color:C.navy, fontWeight:500 }}>Pourquoi SII ?</strong> Une Ã©quipe technique directement impliquÃ©e, de la premiÃ¨re Ã©tude jusqu'Ã  la mise en service â€” sans dilution dans une grande structure.
               </p>
             </div>
             <div className="reveal pillars-grid" style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:"1rem", marginTop:"2rem" }}>
@@ -577,14 +577,15 @@ function About() {
   );
 }
 
-/* ─────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    SERVICES
-───────────────────────────────────────── */
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const SERVICES = [
-  { num:"01", title:"Engineering & Solutions Contractuelles", desc:"Études sur mesure, du concept à l'exécution", body:"SII réalise des études pluridisciplinaires intégrées, en forfait ou en régie. Chaque prestation est construite autour des contraintes techniques et budgétaires du client.", items:["CCTV & vidéosurveillance industrielle et urbaine","Électricité industrielle — HTB, HTA, BT","Automatisme & Instrumentation — DCS/PLC","Fire Fighting & Fire Alarm","Études pluridisciplinaires intégrées","Solutions contractuelles — forfait & régie","Travaux neufs et construction industrielle"] },
-  { num:"02", title:"Supervision & Gestion de Projets", desc:"Coordonner, suivre, livrer dans les règles", body:"Nos équipes assurent la coordination des corps de métier, le contrôle des délais et des budgets, avec un reporting clair et régulier auprès du maître d'ouvrage.", items:["Supervision de travaux — OPC, DET","Management HSE","Management de programmes complexes","Coordination multi-lots","Contrôle des coûts et planning","Reporting et tableaux de bord client"] },
-  { num:"03", title:"Ingénierie & Ressources Techniques", desc:"Les bons profils, au bon moment", body:"SII met à disposition des clients des ressources techniques qualifiées, capables d'intervenir en assistance technique intégrée ou en autonomie dans l'équipe projet.", items:["Ingénieurs d'études et de chantier EIA","Techniciens spécialisés","Dessinateurs CAO / DAO","Directeurs de construction","Préparateurs méthodes","Profils junior à senior"] },
-  { num:"04", title:"Conseil & Assistance Technique", desc:"Un regard technique indépendant", body:"Notre pôle conseil accompagne les directions techniques dans leurs arbitrages — choix de solutions, sélection de prestataires, optimisation d'un DCE.", items:["Conseil technique en dépense contrôlée","Assistance technique intégrée","Experts métier EIA","PMO mis à disposition","Études de faisabilité","Diagnostics et audits techniques"] },
+  { num:"01", title:"Engineering & Solutions Contractuelles", desc:"Ã‰tudes sur mesure, du concept Ã  l'exÃ©cution", body:"SII rÃ©alise des Ã©tudes pluridisciplinaires intÃ©grÃ©es, en forfait ou en rÃ©gie. Chaque prestation est construite autour des contraintes techniques et budgÃ©taires du client.", items:["CCTV & vidÃ©osurveillance industrielle et urbaine","Ã‰lectricitÃ© industrielle â€” HTB, HTA, BT","Automatisme & Instrumentation â€” DCS/PLC","Fire Fighting & Fire Alarm","Ã‰tudes pluridisciplinaires intÃ©grÃ©es","Solutions contractuelles â€” forfait & rÃ©gie","Travaux neufs et construction industrielle"] },
+  { num:"02", title:"Supervision & Gestion de Projets", desc:"Coordonner, suivre, livrer dans les rÃ¨gles", body:"Nos Ã©quipes assurent la coordination des corps de mÃ©tier, le contrÃ´le des dÃ©lais et des budgets, avec un reporting clair et rÃ©gulier auprÃ¨s du maÃ®tre d'ouvrage.", items:["Supervision de travaux â€” OPC, DET","Management HSE","Management de programmes complexes","Coordination multi-lots","ContrÃ´le des coÃ»ts et planning","Reporting et tableaux de bord client"] },
+  { num:"03", title:"IngÃ©nierie & Ressources Techniques", desc:"Les bons profils, au bon moment", body:"SII met Ã  disposition des clients des ressources techniques qualifiÃ©es, capables d'intervenir en assistance technique intÃ©grÃ©e ou en autonomie dans l'Ã©quipe projet.", items:["IngÃ©nieurs d'Ã©tudes et de chantier EIA","Techniciens spÃ©cialisÃ©s","Dessinateurs CAO / DAO","Directeurs de construction","PrÃ©parateurs mÃ©thodes","Profils junior Ã  senior"] },
+  { num:"04", title:"Conseil & Assistance Technique", desc:"Un regard technique indÃ©pendant", body:"Notre pÃ´le conseil accompagne les directions techniques dans leurs arbitrages â€” choix de solutions, sÃ©lection de prestataires, optimisation d'un DCE.", items:["Conseil technique en dÃ©pense contrÃ´lÃ©e","Assistance technique intÃ©grÃ©e","Experts mÃ©tier EIA","PMO mis Ã  disposition","Ã‰tudes de faisabilitÃ©","Diagnostics et audits techniques"] },
+  { num:"05", title:"MÃ©canique & Travaux Industriels", desc:"Piping, montage et travaux en rÃ©gie", body:"SII intervient sur les chantiers industriels pour les travaux mÃ©caniques â piping, montage dâÃ©quipements, structures â avec des Ã©quipes qualifiÃ©es disponibles en rÃ©gie ou forfait.", items:["Travaux de piping industriel","Montage mÃ©canique d'Ã©quipements","Travaux en rÃ©gie","Chaudronnerie et structures mÃ©talliques","Maintenance et mise en conformitÃ© mÃ©canique"] },
 ];
 
 function Services() {
@@ -602,12 +603,12 @@ function Services() {
             <h2 className="f-display reveal" style={{ fontSize:"clamp(3rem,4.5vw,5.5rem)", lineHeight:.92, color:C.navy, marginTop:"1.5rem" }}>
               SAVOIR-FAIRE<br/>
               <span style={{ color:C.bronze }}>COMPLET</span><br/>
-              <span style={{ color:C.steel }}>DE L'ÉTUDE</span><br/>
+              <span style={{ color:C.steel }}>DE L'Ã‰TUDE</span><br/>
               AU CHANTIER
             </h2>
           </div>
           <p className="reveal" style={{ fontSize:".97rem", lineHeight:1.85, color:C.textM }}>
-            SII intervient sur <strong style={{ color:C.navy }}>l'ensemble de la chaîne de projet industriel</strong> — des études préliminaires jusqu'à la supervision des travaux et la mise en service.
+            SII intervient sur <strong style={{ color:C.navy }}>l'ensemble de la chaÃ®ne de projet industriel</strong> â€” des Ã©tudes prÃ©liminaires jusqu'Ã  la supervision des travaux et la mise en service.
           </p>
         </div>
         <div className="reveal" style={{ borderTop:`1px solid ${C.rule}` }}>
@@ -638,8 +639,8 @@ function AccItem({ num, title, desc, body, items, isOpen, onToggle }) {
             <p style={{ fontSize:".9rem", lineHeight:1.85, color:C.textM }}>{body}</p>
             <div style={{ marginTop:"1.8rem" }}>
               <div className="media-slot" style={{ aspectRatio:"16/8", padding:"2rem" }}>
-                <span style={{ fontSize:"1.2rem", opacity:.2 }}>📷</span>
-                <span className="f-mono" style={{ fontSize:".56rem", letterSpacing:".18em", textTransform:"uppercase", color:C.textL }}>Photo — {title}</span>
+                <span style={{ fontSize:"1.2rem", opacity:.2 }}>ðŸ“·</span>
+                <span className="f-mono" style={{ fontSize:".56rem", letterSpacing:".18em", textTransform:"uppercase", color:C.textL }}>Photo â€” {title}</span>
               </div>
             </div>
           </div>
@@ -652,19 +653,19 @@ function AccItem({ num, title, desc, body, items, isOpen, onToggle }) {
   );
 }
 
-/* ─────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    MISSIONS
-───────────────────────────────────────── */
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 function Missions() {
   const phases = [
-    { label:"Phase 01 — Amont", title:"Planification & Études", items:["Élaboration de plans directeurs","Diagnostics techniques (DIAG)","Études de faisabilité technico-économiques","Études de conception et avant-projets","Optimisation des dossiers d'appel d'offres","Contrôle et visa des études d'exécution"] },
-    { label:"Phase 02 — Réalisation", title:"Exécution & Mise en Service", items:["Pilotage et supervision des travaux (OPC, DET)","Coordination et gestion des interfaces multi-lots","Réception FAT (usine) et SAT (site)","Commissioning et mise en service","Assistance au démarrage et à l'exploitation","Projets de mise en conformité & revamping"] },
+    { label:"Phase 01 â€” Amont", title:"Planification & Ã‰tudes", items:["Ã‰laboration de plans directeurs","Diagnostics techniques (DIAG)","Ã‰tudes de faisabilitÃ© technico-Ã©conomiques","Ã‰tudes de conception et avant-projets","Optimisation des dossiers d'appel d'offres","ContrÃ´le et visa des Ã©tudes d'exÃ©cution"] },
+    { label:"Phase 02 â€” RÃ©alisation", title:"ExÃ©cution & Mise en Service", items:["Pilotage et supervision des travaux (OPC, DET)","Coordination et gestion des interfaces multi-lots","RÃ©ception FAT (usine) et SAT (site)","Commissioning et mise en service","Assistance au dÃ©marrage et Ã  l'exploitation","Projets de mise en conformitÃ© & revamping"] },
   ];
   const specs = [
-    { n:"01", title:"Électricité HTB · HTA · BT", body:"Postes de transformation, tableaux TGBT, boucles HTA et distribution BT industrielle." },
-    { n:"02", title:"Automatisme & Instrumentation", body:"Systèmes DCS/PLC, boucles de régulation, instrumentation de process industriel." },
-    { n:"03", title:"Protection Incendie", body:"Détection, extinction automatique — sprinklers, CO₂, FM-200 — conformité APSAD / NFPA." },
-    { n:"04", title:"CCTV & Sécurité", body:"Vidéoprotection industrielle et urbaine, intégrée aux centres de supervision." },
+    { n:"01", title:"Ã‰lectricitÃ© HTB Â· HTA Â· BT", body:"Postes de transformation, tableaux TGBT, boucles HTA et distribution BT industrielle." },
+    { n:"02", title:"Automatisme & Instrumentation", body:"SystÃ¨mes DCS/PLC, boucles de rÃ©gulation, instrumentation de process industriel." },
+    { n:"03", title:"Protection Incendie", body:"DÃ©tection, extinction automatique â€” sprinklers, COâ‚‚, FM-200 â€” conformitÃ© APSAD / NFPA." },
+    { n:"04", title:"CCTV & SÃ©curitÃ©", body:"VidÃ©oprotection industrielle et urbaine, intÃ©grÃ©e aux centres de supervision." },
   ];
   return (
     <section id="missions" style={{ background:C.skyM, position:"relative" }}>
@@ -672,7 +673,7 @@ function Missions() {
       <div style={{ padding:"9rem 5vw", maxWidth:1500, margin:"0 auto", position:"relative", zIndex:1 }}>
         <Eyebrow text="Nos Missions" />
         <h2 className="f-display reveal" style={{ fontSize:"clamp(3rem,4.5vw,5.5rem)", lineHeight:.92, marginTop:"1.5rem", color:C.navy }}>
-          PRÉSENTS À<br/>
+          PRÃ‰SENTS Ã€<br/>
           <span style={{ color:C.bronze }}>CHAQUE PHASE</span><br/>
           <span style={{ color:C.steel }}>DU PROJET</span>
         </h2>
@@ -708,15 +709,15 @@ function Missions() {
   );
 }
 
-/* ─────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    PROJETS
-───────────────────────────────────────── */
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const PROJS = [
-  { n:"01", client:"OCP Group", name:"Hall de Stockage Automatisé", desc:"Supervision et coordination complète d'un projet d'automatisation des systèmes de stockage industriel.", tag:"Automatisation · Supervision", budget:"56", dur:"18" },
-  { n:"02", client:"OCP Group", name:"Programme Détection & Protection Incendie", desc:"Étude et installation d'un programme de grande envergure couvrant les installations de détection et protection incendie du Groupe OCP sur plusieurs sites en parallèle.", tag:"Fire Safety · Conformité NFPA", budget:"240", dur:"24" },
-  { n:"03", client:"OCP Group", name:"Réhabilitation des Installations Incendie", desc:"Réhabilitation complète des systèmes de protection incendie sur plusieurs sites OCP. Remplacement, modernisation, intégration à la supervision centralisée.", tag:"Réhabilitation · Installation", budget:"212", dur:"24" },
-  { n:"04", client:"Client Industriel", name:"Poste Électrique MT/BT", desc:"Gestion multi-métiers d'un projet de mise en conformité de la distribution énergétique industrielle. Études, fourniture, installation, coordination réglementaire.", tag:"Électricité Industrielle · MT/BT", budget:"34", dur:"14" },
-  { n:"05", client:"Ville de Fès", name:"Vidéoprotection Urbaine — Fès", desc:"Conception et déploiement d'un système complet de vidéoprotection urbaine. Caméras intelligentes, centres de supervision, liaisons sécurisées.", tag:"CCTV · Sécurisation Urbaine", budget:"8", dur:"12" },
+  { n:"01", client:"OCP Group", name:"Hall de Stockage AutomatisÃ©", desc:"Supervision et coordination complÃ¨te d'un projet d'automatisation des systÃ¨mes de stockage industriel.", tag:"Automatisation Â· Supervision", budget:"56", dur:"18" },
+  { n:"02", client:"OCP Group", name:"Programme DÃ©tection & Protection Incendie", desc:"Ã‰tude et installation d'un programme de grande envergure couvrant les installations de dÃ©tection et protection incendie du Groupe OCP sur plusieurs sites en parallÃ¨le.", tag:"Fire Safety Â· ConformitÃ© NFPA", budget:"240", dur:"24" },
+  { n:"03", client:"OCP Group", name:"RÃ©habilitation des Installations Incendie", desc:"RÃ©habilitation complÃ¨te des systÃ¨mes de protection incendie sur plusieurs sites OCP. Remplacement, modernisation, intÃ©gration Ã  la supervision centralisÃ©e.", tag:"RÃ©habilitation Â· Installation", budget:"212", dur:"24" },
+  { n:"04", client:"Client Industriel", name:"Poste Ã‰lectrique MT/BT", desc:"Gestion multi-mÃ©tiers d'un projet de mise en conformitÃ© de la distribution Ã©nergÃ©tique industrielle. Ã‰tudes, fourniture, installation, coordination rÃ©glementaire.", tag:"Ã‰lectricitÃ© Industrielle Â· MT/BT", budget:"34", dur:"14" },
+  { n:"05", client:"Ville de FÃ¨s", name:"VidÃ©oprotection Urbaine â€” FÃ¨s", desc:"Conception et dÃ©ploiement d'un systÃ¨me complet de vidÃ©oprotection urbaine. CamÃ©ras intelligentes, centres de supervision, liaisons sÃ©curisÃ©es.", tag:"CCTV Â· SÃ©curisation Urbaine", budget:"8", dur:"12" },
 ];
 
 function Projects() {
@@ -724,14 +725,14 @@ function Projects() {
     <section id="projets" style={{ background:C.white, position:"relative" }}>
       <ElectricCables flip />
       <div style={{ padding:"9rem 5vw", maxWidth:1500, margin:"0 auto", position:"relative", zIndex:1 }}>
-        <Eyebrow text="Références" />
+        <Eyebrow text="RÃ©fÃ©rences" />
         <h2 className="f-display reveal" style={{ fontSize:"clamp(3rem,4.5vw,5.5rem)", lineHeight:.92, marginTop:"1.5rem", color:C.navy }}>
-          PROJETS RÉALISÉS<br/>
+          PROJETS RÃ‰ALISÃ‰S<br/>
           <span style={{ color:C.bronze }}>PAR NOTRE</span><br/>
-          <span style={{ color:C.steel }}>ÉQUIPE</span>
+          <span style={{ color:C.steel }}>Ã‰QUIPE</span>
         </h2>
         <p className="reveal" style={{ marginTop:"1rem", fontSize:".86rem", color:C.textL, maxWidth:560, lineHeight:1.8 }}>
-          Ces références ont été réalisées par les membres fondateurs de SII dans le cadre de leurs missions antérieures.
+          Ces rÃ©fÃ©rences ont Ã©tÃ© rÃ©alisÃ©es par les membres fondateurs de SII dans le cadre de leurs missions antÃ©rieures.
         </p>
         <div style={{ marginTop:"4rem", borderTop:`1px solid ${C.rule}` }}>
           {PROJS.map((p,i)=><ProjRow key={i} {...p} idx={i} />)}
@@ -755,7 +756,7 @@ function ProjRow({ n, client, name, desc, tag, budget, dur, idx }) {
         <p style={{ fontSize:".87rem", color:C.textM, lineHeight:1.75, maxWidth:520 }}>{desc}</p>
         <div style={{ marginTop:"1rem", maxWidth:360 }}>
           <div className="media-slot" style={{ aspectRatio:"16/6", padding:"1.5rem" }}>
-            <span style={{ fontSize:"1rem", opacity:.2 }}>📷</span>
+            <span style={{ fontSize:"1rem", opacity:.2 }}>ðŸ“·</span>
             <span className="f-mono" style={{ fontSize:".54rem", letterSpacing:".18em", textTransform:"uppercase", color:C.textL }}>Photo du projet</span>
           </div>
         </div>
@@ -768,16 +769,164 @@ function ProjRow({ n, client, name, desc, tag, budget, dur, idx }) {
         </div>
         <div style={{ textAlign:"right" }}>
           <div className="f-display" style={{ fontSize:"2.4rem", lineHeight:1, color:C.steel }}>{dur} <span style={{ fontSize:"1rem", color:C.steel }}>mois</span></div>
-          <div className="f-mono" style={{ fontSize:".56rem", letterSpacing:".15em", textTransform:"uppercase", color:C.textL, marginTop:".2rem" }}>Durée</div>
+          <div className="f-mono" style={{ fontSize:".56rem", letterSpacing:".15em", textTransform:"uppercase", color:C.textL, marginTop:".2rem" }}>DurÃ©e</div>
         </div>
       </div>
     </div>
   );
 }
 
+
 /* ─────────────────────────────────────────
-   CONTACT
+   ÉQUIPE
 ───────────────────────────────────────── */
+function Team() {
+  const comite = ["Farhat Nawfal", "Elmoussaid Rachid"];
+  const supports = [
+    { role:"Assistante de direction", name:"Hind Elmahmoudi" },
+    { role:"Resp. Achat Logistique", name:"Abdelhakim DAR" },
+    { role:"Resp. RH", name:"Faiza Aoual" },
+    { role:"Resp. Financier", name:"Omar Eloudghiri" },
+  ];
+  const bureau = [
+    { role:"Resp. Bureau d\'Étude", name:"Mehdi Bairaha" },
+    { role:"Resp. EIA", name:"Mehdi Bairaha" },
+    { role:"Resp. Mécanique", name:"Imad Alami" },
+    { role:"Resp. Génie Civil", name:"Abdelilah Aitmanzar" },
+  ];
+  const direction = [
+    { role:"Resp. Control Projet", name:"Hamza Farhat" },
+    { role:"Resp. Construction", name:"Tarik Samik" },
+    { role:"Resp. Cellule Préparation", name:"Aziz Idrissi" },
+  ];
+  const qhse = { role:"Responsable QHSE", name:"Aya Hachfi" };
+
+  const Card = ({ role, name, accent=false }) => (
+    <div style={{ background:accent?C.navy:C.white, border:`1px solid ${C.rule}`, padding:"1rem 1.3rem", borderTop:`2px solid ${accent?C.bronze:C.steel}` }}>
+      <div className="f-mono" style={{ fontSize:".54rem", letterSpacing:".18em", textTransform:"uppercase", color:accent?C.bronzeL:C.textL, marginBottom:".3rem" }}>{role}</div>
+      <div className="f-display" style={{ fontSize:"1.05rem", color:accent?C.white:C.navy }}>{name}</div>
+    </div>
+  );
+
+  return (
+    <section id="equipe" style={{ background:C.skyL, position:"relative" }}>
+      <ElectricCables flip />
+      <div style={{ padding:"9rem 5vw", maxWidth:1500, margin:"0 auto", position:"relative", zIndex:1 }}>
+        <Eyebrow text="Notre Organisation" />
+        <h2 className="f-display reveal" style={{ fontSize:"clamp(3rem,4.5vw,5.5rem)", lineHeight:.92, marginTop:"1.5rem", color:C.navy }}>
+          UNE ÉQUIPE<br/>
+          <span style={{ color:C.bronze }}>D\'EXPERTS</span><br/>
+          <span style={{ color:C.steel }}>À VOTRE SERVICE</span>
+        </h2>
+        <div className="reveal" style={{ marginTop:"4rem" }}>
+          <div className="f-mono" style={{ fontSize:".6rem", letterSpacing:".24em", textTransform:"uppercase", color:C.bronze, marginBottom:"1rem" }}>Comité de Direction</div>
+          <div style={{ display:"grid", gridTemplateColumns:"repeat(2,auto)", gap:1, justifyContent:"start" }}>
+            {comite.map((n,i)=>(
+              <div key={i} style={{ background:C.navy, padding:"1rem 2rem", borderTop:`2px solid ${C.bronze}` }}>
+                <div className="f-display" style={{ fontSize:"1.1rem", color:C.white }}>{n}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="reveal" style={{ display:"grid", gridTemplateColumns:"1fr 1fr 1fr 220px", gap:"2rem", marginTop:"3rem" }}>
+          <div>
+            <div className="f-mono" style={{ fontSize:".58rem", letterSpacing:".2em", textTransform:"uppercase", color:C.textL, marginBottom:"1rem", borderBottom:`1px solid ${C.rule}`, paddingBottom:".5rem" }}>Fonctions Support</div>
+            <div style={{ display:"flex", flexDirection:"column", gap:8 }}>
+              {supports.map((s,i)=><Card key={i} role={s.role} name={s.name} />)}
+            </div>
+          </div>
+          <div>
+            <div className="f-mono" style={{ fontSize:".58rem", letterSpacing:".2em", textTransform:"uppercase", color:C.textL, marginBottom:"1rem", borderBottom:`1px solid ${C.rule}`, paddingBottom:".5rem" }}>Bureau d\'Étude</div>
+            <div style={{ display:"flex", flexDirection:"column", gap:8 }}>
+              {bureau.map((s,i)=><Card key={i} role={s.role} name={s.name} />)}
+            </div>
+          </div>
+          <div>
+            <div className="f-mono" style={{ fontSize:".58rem", letterSpacing:".2em", textTransform:"uppercase", color:C.textL, marginBottom:"1rem", borderBottom:`1px solid ${C.rule}`, paddingBottom:".5rem" }}>Direction Technique</div>
+            <div style={{ display:"flex", flexDirection:"column", gap:8 }}>
+              {direction.map((s,i)=><Card key={i} role={s.role} name={s.name} />)}
+            </div>
+          </div>
+          <div>
+            <div className="f-mono" style={{ fontSize:".58rem", letterSpacing:".2em", textTransform:"uppercase", color:C.textL, marginBottom:"1rem", borderBottom:`1px solid ${C.rule}`, paddingBottom:".5rem" }}>QHSE</div>
+            <Card role={qhse.role} name={qhse.name} accent />
+          </div>
+        </div>
+      </div>
+      <ElectricCables />
+    </section>
+  );
+}
+
+/* ─────────────────────────────────────────
+   CHIFFRES 2026
+───────────────────────────────────────── */
+const CHIFFRES_2026 = [
+  { statut:"Commande", client:"JESA", projet:"TSP Adaptation JFC 1,2 et 4 – Électricité & Instrumentation", duree:"7 mois", montant:"7.000.000" },
+  { statut:"Commande", client:"OCP", projet:"Aménagement Zone PUMA – Réhabilitation locaux SAEDM", duree:"2 mois", montant:"210.000" },
+  { statut:"Commande", client:"MK Énergie", projet:"Safi Existing Site MP1 MT/BT SUBSTATION – Lot Électricité", duree:"11 mois", montant:"22.343.300" },
+  { statut:"Commande", client:"ONDOAN/JESA", projet:"Construction poste MT/BT & CFO/CFA Casernes Jorf", duree:"6 mois", montant:"14.342.200" },
+  { statut:"Commande", client:"OFAS", projet:"Usine TSP SAFI 3 – Lot Électricité & Instrumentation", duree:"12 mois", montant:"36.640.000" },
+  { statut:"Opportunité", client:"JESA", projet:"Convoyeurs d\'alimentation TSP adaptation – Lot Instrumentation", duree:"4 mois", montant:"9.041.000" },
+  { statut:"Opportunité", client:"SGTM", projet:"Platform SPH-PSA – Électricité & Instrumentation 2 postes MT/BT", duree:"18 mois", montant:"21.145.000" },
+];
+
+function Chiffres() {
+  return (
+    <section id="chiffres" style={{ background:C.navy, position:"relative" }}>
+      <ElectricCables flip dark />
+      <div style={{ padding:"9rem 5vw", maxWidth:1500, margin:"0 auto", position:"relative", zIndex:1 }}>
+        <Eyebrow text="Activité en cours" />
+        <h2 className="f-display reveal" style={{ fontSize:"clamp(3rem,4.5vw,5.5rem)", lineHeight:.92, marginTop:"1.5rem", color:C.white }}>
+          CHIFFRES<br/>
+          <span style={{ color:C.bronze }}>2026</span>
+        </h2>
+        <div className="reveal" style={{ marginTop:"4rem", overflowX:"auto" }}>
+          <table style={{ width:"100%", borderCollapse:"collapse", fontSize:".84rem" }}>
+            <thead>
+              <tr style={{ borderBottom:`2px solid ${C.bronze}40` }}>
+                {["Statut","Client","Projet","Durée","Montant HT (MAD)"].map((h,i)=>(
+                  <th key={i} className="f-mono" style={{ padding:".8rem 1rem", textAlign:i>0?"left":"center", fontSize:".58rem", letterSpacing:".2em", textTransform:"uppercase", color:C.mist, fontWeight:400, whiteSpace:"nowrap" }}>{h}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {CHIFFRES_2026.map((r,i)=>(
+                <tr key={i} style={{ borderBottom:`1px solid rgba(255,255,255,.06)`, transition:"background .2s" }}
+                  onMouseEnter={e=>e.currentTarget.style.background="rgba(255,255,255,.04)"}
+                  onMouseLeave={e=>e.currentTarget.style.background="transparent"}>
+                  <td style={{ padding:"1rem", textAlign:"center" }}>
+                    <span style={{ display:"inline-block", padding:".2rem .7rem", fontSize:".58rem", letterSpacing:".14em", textTransform:"uppercase", fontFamily:"\'DM Mono\'", background:r.statut==="Commande"?`${C.bronze}22`:`${C.steelL}15`, color:r.statut==="Commande"?C.bronze:C.steelL, border:`1px solid ${r.statut==="Commande"?C.bronze+"44":C.steelL+"33"}` }}>{r.statut}</span>
+                  </td>
+                  <td style={{ padding:"1rem", color:C.white, fontWeight:500, whiteSpace:"nowrap" }}>{r.client}</td>
+                  <td style={{ padding:"1rem", color:"rgba(255,255,255,.65)", lineHeight:1.55 }}>{r.projet}</td>
+                  <td style={{ padding:"1rem", color:C.steelL, whiteSpace:"nowrap", fontFamily:"\'DM Mono\'", fontSize:".78rem" }}>{r.duree}</td>
+                  <td style={{ padding:"1rem", textAlign:"right", fontFamily:"\'DM Mono\'", fontSize:".84rem", color:C.bronzeL, whiteSpace:"nowrap" }}>{r.montant}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div className="reveal" style={{ display:"flex", justifyContent:"flex-end", gap:"2rem", marginTop:"2rem", flexWrap:"wrap" }}>
+          {[
+            { label:"Total Carnet de commande", value:"80.535.500 MAD" },
+            { label:"Total Opportunités", value:"30.186.000 MAD" },
+          ].map((t,i)=>(
+            <div key={i} style={{ textAlign:"right", padding:"1.5rem 2rem", border:`1px solid ${i===0?C.bronze+"55":C.steel+"44"}`, background:i===0?"rgba(184,150,106,.08)":"rgba(100,120,140,.08)" }}>
+              <div className="f-mono" style={{ fontSize:".58rem", letterSpacing:".2em", textTransform:"uppercase", color:C.mist, marginBottom:".5rem" }}>{t.label}</div>
+              <div className="f-display" style={{ fontSize:"1.8rem", color:i===0?C.bronze:C.steelL }}>{t.value}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <ElectricCables dark />
+    </section>
+  );
+}
+
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+   CONTACT
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 function Contact() {
   return (
     <section id="contact" style={{ background:C.sky, position:"relative" }}>
@@ -788,12 +937,12 @@ function Contact() {
             <Eyebrow text="Travaillons ensemble" />
             <h2 className="f-display reveal" style={{ fontSize:"clamp(3rem,4.5vw,5.5rem)", lineHeight:.92, marginTop:"1.5rem", color:C.navy }}>
               VOTRE PROJET<br/>
-              <span style={{ color:C.bronze }}>MÉRITE</span><br/>
-              UNE ÉQUIPE<br/>
-              <span style={{ color:C.steel }}>À SA MESURE</span>
+              <span style={{ color:C.bronze }}>MÃ‰RITE</span><br/>
+              UNE Ã‰QUIPE<br/>
+              <span style={{ color:C.steel }}>Ã€ SA MESURE</span>
             </h2>
             <p className="reveal" style={{ marginTop:"2.5rem", fontSize:".97rem", lineHeight:1.85, color:C.textM }}>
-              Que vous soyez en phase d'étude, en cours d'appel d'offres ou en recherche d'un partenaire technique, l'équipe SII est disponible pour analyser votre besoin et vous proposer une réponse adaptée.
+              Que vous soyez en phase d'Ã©tude, en cours d'appel d'offres ou en recherche d'un partenaire technique, l'Ã©quipe SII est disponible pour analyser votre besoin et vous proposer une rÃ©ponse adaptÃ©e.
             </p>
             <div style={{ marginTop:"3rem", opacity:.12 }}>
               <AnimatedLogo size={64} color={C.navy} speed={20} />
@@ -805,8 +954,8 @@ function Contact() {
               {[
                 { lbl:"Email professionnel", val:<a href="mailto:contact@si-i.ma" style={{ color:C.bronze, textDecoration:"none" }}>contact@si-i.ma</a> },
                 { lbl:"Site web", val:<a href="http://www.si-i.ma" style={{ color:C.bronze, textDecoration:"none" }}>www.si-i.ma</a> },
-                { lbl:"Domaines", val:<span style={{ fontSize:".88rem", lineHeight:1.65, color:C.textM }}>Électricité · Automatisme · Instrumentation<br/>Fire Safety · CCTV</span> },
-                { lbl:"Marchés", val:"Maroc — Afrique" },
+                { lbl:"Domaines", val:<span style={{ fontSize:".88rem", lineHeight:1.65, color:C.textM }}>Ã‰lectricitÃ© Â· Automatisme Â· Instrumentation<br/>Fire Safety Â· CCTV</span> },
+                { lbl:"MarchÃ©s", val:"Maroc â€” Afrique" },
               ].map((l,i,arr)=>(
                 <div key={i} style={{ display:"flex", flexDirection:"column", gap:".3rem", padding:"1.2rem 0", borderBottom:i<arr.length-1?`1px solid ${C.rule}`:"none" }}>
                   <span className="f-mono" style={{ fontSize:".56rem", letterSpacing:".24em", textTransform:"uppercase", color:C.textL }}>{l.lbl}</span>
@@ -814,7 +963,7 @@ function Contact() {
                 </div>
               ))}
               <a href="mailto:contact@si-i.ma" className="btn-primary" style={{ marginTop:"2.5rem" }}>
-                Envoyer un message →
+                Envoyer un message â†’
               </a>
             </div>
           </div>
@@ -824,9 +973,9 @@ function Contact() {
   );
 }
 
-/* ─────────────────────────────────────────
-   FOOTER — marine comme le logo
-───────────────────────────────────────── */
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+   FOOTER â€” marine comme le logo
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 function Footer() {
   return (
     <footer style={{
@@ -835,26 +984,26 @@ function Footer() {
       display:"flex", justifyContent:"space-between", alignItems:"center", flexWrap:"wrap", gap:"1rem",
     }}>
       <div style={{ display:"flex", alignItems:"center", gap:14 }}>
-        {/* Logo animé blanc sur fond marine */}
+        {/* Logo animÃ© blanc sur fond marine */}
         <AnimatedLogo size={30} color={C.white} speed={16} />
         <div>
           <div className="f-mono" style={{ fontSize:".7rem", letterSpacing:".26em", textTransform:"uppercase", color:"rgba(255,255,255,.75)" }}>SII</div>
-          <div className="f-mono" style={{ fontSize:".54rem", color:"rgba(255,255,255,.4)" }}>Société d'Ingénierie et d'Innovation</div>
+          <div className="f-mono" style={{ fontSize:".54rem", color:"rgba(255,255,255,.4)" }}>SociÃ©tÃ© d'IngÃ©nierie et d'Innovation</div>
         </div>
       </div>
       <span style={{ fontStyle:"italic", fontSize:".88rem", color:"rgba(255,255,255,.38)", fontFamily:"'Barlow'" }}>
         Construisons l'avenir, projet par projet.
       </span>
       <span className="f-mono" style={{ fontSize:".58rem", letterSpacing:".12em", color:"rgba(255,255,255,.25)" }}>
-        © 2026 SII — Tous droits réservés
+        Â© 2026 SII â€” Tous droits rÃ©servÃ©s
       </span>
     </footer>
   );
 }
 
-/* ─────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    APP
-───────────────────────────────────────── */
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 export default function App() {
   useReveal();
   return (
@@ -867,6 +1016,8 @@ export default function App() {
       <Services />
       <Missions />
       <Projects />
+      <Team />
+      <Chiffres />
       <Contact />
       <Footer />
     </>
